@@ -11,6 +11,6 @@ import sys
 
 for filename in sys.argv[1:]:
     font = fontforge.open(filename)
-    print('%s: %s' % (filename, font.copyright))
+    print('{0}: {1}'.format(filename, font.copyright))
 
 # vim:ts=4 sw=4 et
