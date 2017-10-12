@@ -15,11 +15,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('paths', metavar='FILE', nargs='+')
     options = ap.parse_args()
-    for filename in options.paths:
-        font = fontforge.open(filename)
+    for path in options.paths:
+        font = fontforge.open(path)
         copyright = font.copyright
         copyright = copyright.replace('\n', '\t')
-        print('{0}: {1}'.format(filename, copyright))
+        print('{0}: {1}'.format(path, copyright))
 
 if __name__ == '__main__':
     main()
