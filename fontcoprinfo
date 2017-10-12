@@ -18,6 +18,7 @@ def main():
         font = fontforge.open(path)
         copyright = font.copyright
         copyright = copyright.replace('\n', '\t')
+        copyright = copyright.strip()
         print('{0}: {1}'.format(path, copyright))
 
 if __name__ == '__main__':
