@@ -17,7 +17,9 @@ def main():
     options = ap.parse_args()
     for filename in options.paths:
         font = fontforge.open(filename)
-        print('{0}: {1}'.format(filename, font.copyright))
+        copyright = font.copyright
+        copyright = copyright.replace('\n', '\t')
+        print('{0}: {1}'.format(filename, copyright))
 
 if __name__ == '__main__':
     main()
