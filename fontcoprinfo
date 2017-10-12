@@ -6,8 +6,9 @@
 
 from __future__ import print_function
 
-import fontforge
 import sys
+
+import fontforge
 
 for filename in sys.argv[1:]:
     font = fontforge.open(filename)
