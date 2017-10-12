@@ -6,12 +6,16 @@
 
 from __future__ import print_function
 
+import argparse
 import sys
 
 import fontforge
 
 def main():
-    for filename in sys.argv[1:]:
+    ap = argparse.ArgumentParser()
+    ap.add_argument('paths', metavar='FILE', nargs='+')
+    options = ap.parse_args()
+    for filename in options.paths:
         font = fontforge.open(filename)
         print('{0}: {1}'.format(filename, font.copyright))
 
