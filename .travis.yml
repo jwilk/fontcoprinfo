@@ -1,0 +1,17 @@
+dist: trusty
+sudo: false
+language: generic
+addons:
+  apt:
+    packages:
+    - python-fontforge
+install:
+- python -m pip install --user pydiatra pyflakes
+- python -m pip install --user pygments restructuredtext-lint
+script:
+- ./fontcoprinfo --help
+- python -m pydiatra .
+- pyflakes .
+- restructuredtext-lint --encoding=UTF-8 README
+
+# vim:ts=2 sts=2 sw=2 et
